@@ -43,8 +43,34 @@ public class CLI {
 
                     String password = scanner.nextLine().trim();
                     if ("Password123".equals(password)) {
-                        System.out.println("Hello Admin");
                         AdminLogIn = true;
+                        System.out.println("Hello Admin! What would you like to do?");
+                        while (true) {// loop to allow interface to work
+                            System.out.println("Choose an option: ");
+                            System.out.println(" ");
+                            System.out.println("Test 1");
+                            System.out.println("Test 2");
+                            System.out.println("Exit");
+
+                            String choice = scanner.nextLine().trim();
+                            switch (choice) {
+                                case "Scale ID": // add new "Case", String after case is what needs to be typed to get the output below the case
+                                    System.out.println("Test 1");
+                                    System.out.println(" ");
+                                    break;
+                                case "Description":
+                                    System.out.println("Test 2");
+                                    System.out.println(" ");
+                                    break;
+                                case "Exit":
+                                    System.out.println("Goodbye!");
+                                    System.out.println(" ");
+                                    return; // Exit the loop and program
+                                default:
+                                    System.out.println("Invalid option. Please try again.");
+                                    System.out.println(" ");
+                            }
+                        }
                     } else {
                         System.out.println("Incorrect password");
                     }

@@ -52,14 +52,14 @@ public class CLI {
 
                             String choice = scanner.nextLine().trim();
                             switch (choice) {
-                                case "Scale ID": // add new "Case", String after case is what needs to be typed to get the output below the case
-                                    System.out.println("Test 1");
+                                case "Test 1": // add new "Case", String after case is what needs to be typed to get the output below the case
+                                    System.out.println("Test 1 successful");
                                     System.out.println(" ");
                                     break;
-                                case "Description":
-                                    System.out.println("Test 2");
+                                case "Test 2":
+                                    System.out.println("Test 2 successful");
                                     System.out.println(" ");
-                                    break;
+                                    break; // breaks loop and returns to the start of the loop
                                 case "Exit":
                                     System.out.println("Goodbye!");
                                     System.out.println(" ");

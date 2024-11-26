@@ -32,11 +32,12 @@ public class CLI {
             return; // Exit if there's an error loading the file
         }
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("Please enter if you are an Admin, HR or a User");
+            System.out.println("Please enter if you are an Admin, HR or a UserID");
             String input = scanner.nextLine().trim();
-
+            boolean AdminLogIn = false;
+            boolean HRLogIn = false;
+            boolean UserLogIn = false;
             if ("Admin".equalsIgnoreCase(input)) {
-                boolean AdminLogIn = false;
                 while (!AdminLogIn) {
                     System.out.println("Please enter password: ");
 
@@ -49,7 +50,6 @@ public class CLI {
                     }
                 }
             } else if ("HR".equalsIgnoreCase(input)) {
-                boolean HRLogIn = false;
                 while (!HRLogIn) {
                     System.out.println("Hello HR, please enter password: ");
                     String password2 = scanner.nextLine().trim();
@@ -60,17 +60,22 @@ public class CLI {
                         System.out.println("Incorrect password");
                     }
                 }
-                } else {
-                    System.out.println("invalid input, moving to next step- HR");
-                }
+            } else if ("User".equalsIgnoreCase(input)) {
+                System.out.println("Proceeding as a User...");
+                UserLogIn = true;
+            } else {
+                System.out.println("Invalid role entered: Proceeding to User");
+                UserLogIn = true; // ensures that "User" is logged in, to allow the correct code to run
+            }
 
-                System.out.println("Please enter user ID");
-                input = scanner.nextLine().trim();
 
-                if (dataMap.containsKey(input)) { // if the correct ID is entered
-                    String[] details = dataMap.get(input);
-                    System.out.println("Hello there: " + details[0] + ", What would you like to do?");
-                    while (true) {
+            System.out.println("Please enter user ID");
+            input = scanner.nextLine().trim();
+
+            if (dataMap.containsKey(input)) { // if the correct ID is entered
+                String[] details = dataMap.get(input);
+                System.out.println("Hello there: " + details[0] + ", What would you like to do?");
+                while (true) {
                         System.out.println("Choose an option: ");
                         System.out.println(" ");
                         System.out.println("Scale ID");
@@ -103,3 +108,4 @@ public class CLI {
             }
         }
     }
+

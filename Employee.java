@@ -1,15 +1,11 @@
 public class Employee {
-    private String name;
-    private int Id;
-    public String payScale;
-    public Employee(String name, int Id, String payScale) {
-        this.name = name;
-        this.Id = Id;
-        this.payScale = payScale;
+    private String name = "Ashley Collier";
+    private int Id = 51087;
+    private String payScale = "EP_CM_08";
+    private String Position = "EPS Category Manager";
+    public Employee() {}
+
+    public String getPayScale() {
+        return payScale;
     }
-
-    public void promote() {
-
-    }
-
 }

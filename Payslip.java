@@ -1,11 +1,13 @@
-import java.util.ArrayList;
-
+import java.util.List;
 
 public class Payslip {
-    public void payslip(Employee employee) {
+    List<List<String>> Scales = CSVReader.read("ScaleID.csv");
+    public void makePayslip(Employee emp) {
         int salary;
-        //ArrayList<String[]> dataLines = new ArrayList<>();
-        //dataLines.add(new String[] { "John", "Doe", "38", "Comment Data\nAnother line of comment data" });
+        for (List<String> Scale : Scales) {
+            if (Scale.get(1) == emp.getPayScale()) {
+                    int pay = Integer.parseInt(Scale.get(2));
+            }
+        }
     }
-
 }

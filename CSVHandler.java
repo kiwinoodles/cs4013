@@ -1,9 +1,11 @@
+package org.example;
+
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
-
+import java.util.*;
 public class CSVHandler {
-    private final String filePath;
+    private static String filePath;
 
     // constructor with a default file path for Employee file
     public CSVHandler(String filePath) {
@@ -18,8 +20,11 @@ public class CSVHandler {
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(","); // split each line by commas
                 if (values.length > 0) {
-                    String key = values[0]; // assume the first column is the unique key
-                    data.put(key, values); // store the key and the rest of the row
+                    String key = values[0].trim();
+                    String name = values[1].trim(); // Second column...
+                    String scaleID = values[2].trim(); // ...
+                    String description = values[3].trim();// assume the first column is the unique key
+                    data.put(key, new String[]{name, scaleID, description}); // store the key and the rest of the row
                 }
             }
         } catch (IOException e) {
@@ -37,11 +42,46 @@ public class CSVHandler {
             throw new IOException("oops, error writing to file: " + e.getMessage(), e);
         }
     }
+    public static void DeleteRow(String[] row) throws IOException {
+        List<String> Temp = new ArrayList<>();
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Select UserID to delete: ");
+            String valueToDelete = scanner.nextLine().trim();
+
+            Temp = new ArrayList<>();
+            boolean IsDeleted = false;
+            try (Scanner FileScanner = new Scanner(new File(filePath))) {
+                while (FileScanner.hasNextLine()) {
+                    String CurrentLine = FileScanner.nextLine();
+                    String[] values = CurrentLine.split(",");
+                    if ((values.length > 0 && values[0].trim().equals(valueToDelete))) {
+                        IsDeleted = true; // Mark that the row was found and deleted
+                        continue;
+                    }
+                    Temp.add(CurrentLine);
+                }
+            }
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+                for (String line : Temp) {
+                    writer.write(line);
+                    writer.newLine();
+                }
+            }
+
+            if (IsDeleted) {
+                System.out.println("The User " + valueToDelete + "has been successfully deleted");
+            } else {
+                System.out.println("No matching ID has been found");
+            }
+
+        }
+
+    }
 
     // updating or adding a row in the file
-    public void updateRow(String key, String[] newRow) throws IOException {
+    public void updateRow(String[] newRow) throws IOException {
         Map<String, String[]> data = readFile(filePath); // read the current file into a hashmap
-        data.put(key, newRow); // add or replace the row with the new data
+        // add or replace the row with the new data
 
         // rewrite the file with the updated data
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, false))) {
@@ -54,3 +94,4 @@ public class CSVHandler {
         }
     }
 }
+

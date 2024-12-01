@@ -1,72 +1,75 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
+package org.example;
+
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class CLI {
     public static void main(String[] args) {
-        String filepath = "src/main/resources/Employee.csv"; //Path to the CSV file
-        Map<String, String[]> dataMap = new HashMap<>(); // Store all columns in an array
+        String filepath = "C://Users//hmiko//Documents//Employee.csv"; // path to the CSV file change accordingly
+        CSVHandler editor = new CSVHandler(filepath);
+        Map<String, String[]> dataMap = new HashMap<>(); // store all columns in a map
 
-        // Load the CSV data into the map
-        try (BufferedReader br = new BufferedReader(new FileReader(filepath))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] columns = line.split(","); // Split each line into columns so text can be processed
-                if (columns.length >= 4) { // Ensure there are at least four columns(change int for desired columns)
-                    String id = columns[0].trim(); // First column of CSV file
-                    String name = columns[1].trim(); // Second column...
-                    String scaleID = columns[2].trim(); // ...
-                    String description = columns[3].trim(); // ...
-
-                    //Stores details from CSV into string format
-                    dataMap.put(id, new String[]{name, scaleID, description});
-                }
+        try {
+            List<String[]> dataList = editor.readFile();  // load data from CSV into a list
+            // convert List<String[]> to Map<String, String[]>
+            for (String[] row : dataList) {
+                String id = row[0];  // assuming the first column is the employee ID
+                dataMap.put(id, row); // store row in map with ID as the key
             }
         } catch (IOException e) {
-            System.err.println("An error occurred while reading the file: " + e.getMessage());
-            return; // Exit if there's an error loading the file
+            System.err.println("Error occurred while reading the file: " + e.getMessage());
+            return; // exit if there's an error loading the file
         }
+
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("Please enter if you are an Admin, HR or a UserID");
+            System.out.println("Please enter your role (Admin, HR, or User):");
             String input = scanner.nextLine().trim();
             boolean AdminLogIn = false;
             boolean HRLogIn = false;
             boolean UserLogIn = false;
+
             if ("Admin".equalsIgnoreCase(input)) {
                 while (!AdminLogIn) {
                     System.out.println("Please enter password: ");
-
                     String password = scanner.nextLine().trim();
                     if ("Password123".equals(password)) {
                         AdminLogIn = true;
                         System.out.println("Hello Admin! What would you like to do?");
-                        while (true) {// loop to allow interface to work
+                        // display all employees here ONLY after admin login
+                        System.out.println("Employee List:");
+                        for (String id : dataMap.keySet()) {
+                            String[] details = dataMap.get(id);
+                            System.out.println("ID: " + details[0] + ", Name: " + details[1] + ", Scale ID: " + details[2] + ", Description: " + details[3]);
+                        }
+                        while (true) {
                             System.out.println("Choose an option: ");
-                            System.out.println(" ");
-                            System.out.println("Test 1");
-                            System.out.println("Test 2");
-                            System.out.println("Exit");
+                            System.out.println("1. Delete Employee");
+                            System.out.println("2. Exit");
 
                             String choice = scanner.nextLine().trim();
                             switch (choice) {
-                                case "Test 1": // add new "Case", String after case is what needs to be typed to get the output below the case
-                                    System.out.println("Test 1 successful");
-                                    System.out.println(" ");
+                                case "1":
+                                    System.out.println("Enter Employee ID to delete: ");
+                                    String idToDelete = scanner.nextLine().trim();
+                                    if (dataMap.containsKey(idToDelete)) {
+                                        // remove the employee from the map and update the file
+                                        dataMap.remove(idToDelete);
+                                        List<String[]> updatedData = new ArrayList<>(dataMap.values()); // convert map back to list
+                                        try {
+                                            editor.writeFile(updatedData);  // update CSV file
+                                        } catch (IOException e) {
+                                            System.err.println("Error updating CSV: " + e.getMessage());
+                                        }
+                                        System.out.println("Employee deleted successfully.");
+                                    } else {
+                                        System.out.println("ID not found.");
+                                    }
                                     break;
-                                case "Test 2":
-                                    System.out.println("Test 2 successful");
-                                    System.out.println(" ");
-                                    break; // breaks loop and returns to the start of the loop
-                                case "Exit":
+                                case "2":
                                     System.out.println("Goodbye!");
-                                    System.out.println(" ");
-                                    return; // Exit the loop and program
+                                    return; // exit the loop and program
                                 default:
                                     System.out.println("Invalid option. Please try again.");
-                                    System.out.println(" ");
                             }
                         }
                     } else {
@@ -80,6 +83,45 @@ public class CLI {
                     if ("Password321".equals(password2)) {
                         System.out.println("Hello HR!");
                         HRLogIn = true;
+                        // display all employees HERE after HR login
+                        System.out.println("Employee List:");
+                        for (String id : dataMap.keySet()) {
+                            String[] details = dataMap.get(id);
+                            System.out.println("ID: " + details[0] + ", Name: " + details[1] + ", Scale ID: " + details[2] + ", Description: " + details[3]);
+                        }
+
+                        // this part shows options like view id etc..
+                        while (true) {
+                            System.out.println("Choose an employee ID to view their details or exit:");
+                            String idToView = scanner.nextLine().trim();
+                            if (dataMap.containsKey(idToView)) {
+                                String[] details = dataMap.get(idToView);
+                                System.out.println("Now displaying employee: " + details[1]);
+                                while (true) {
+                                    System.out.println("Choose an option: ");
+                                    System.out.println("1. View Scale ID");
+                                    System.out.println("2. View Description");
+                                    System.out.println("3. Exit");
+
+                                    String choice = scanner.nextLine().trim();
+                                    switch (choice) {
+                                        case "1":
+                                            System.out.println("Scale ID: " + details[2]);
+                                            break;
+                                        case "2":
+                                            System.out.println("Description: " + details[3]);
+                                            break;
+                                        case "3":
+                                            System.out.println("Exiting employee details view.");
+                                            return; // Exit the employee view section
+                                        default:
+                                            System.out.println("Invalid option. Please try again.");
+                                    }
+                                }
+                            } else {
+                                System.out.println("ID not found. Please try again.");
+                            }
+                        }
                     } else {
                         System.out.println("Incorrect password");
                     }
@@ -89,47 +131,8 @@ public class CLI {
                 UserLogIn = true;
             } else {
                 System.out.println("Invalid role entered: Proceeding to User");
-                UserLogIn = true; // ensures that "User" is logged in, to allow the correct code to run
-            }
-
-
-            System.out.println("Please enter user ID");
-            input = scanner.nextLine().trim();
-
-            if (dataMap.containsKey(input)) { // if the correct ID is entered
-                String[] details = dataMap.get(input);
-                System.out.println("Hello there: " + details[0] + ", What would you like to do?");
-                while (true) {
-                        System.out.println("Choose an option: ");
-                        System.out.println(" ");
-                        System.out.println("Scale ID");
-                        System.out.println("Description");
-                        System.out.println("Exit");
-
-                        String choice = scanner.nextLine().trim();
-                        switch (choice) {
-                            case "Scale ID": // add new "Case", String after case is what needs to be typed to get the output below the case
-                                System.out.println("Scale ID: " + details[1]);
-                                System.out.println(" ");
-                                break;
-                            case "Description":
-                                System.out.println("Description: " + details[2]);
-                                System.out.println(" ");
-                                break;
-                            case "Exit":
-                                System.out.println("Goodbye!");
-                                System.out.println(" ");
-                                return; // Exit the loop and program
-                            default:
-                                System.out.println("Invalid option. Please try again.");
-                                System.out.println(" ");
-                        }
-                    }
-                } else { //If ID is not found quits program
-                    System.out.println("ID not found in the CSV file.");
-                }
-
+                UserLogIn = true; // ensures that "User" is logged in
             }
         }
     }
-
+}

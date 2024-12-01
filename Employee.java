@@ -1,74 +1,64 @@
-import java.util.List;
+package org.example;
 
 public class Employee {
     private String name;
-    private String Id;
-    private String payScale;
-    private String Position;
-    private boolean Married = false;
-    private boolean SingleChildCarer = false;
-    private boolean SoleIncome = false;
+    private String id;
+    private String scaleID;
+    private String description;
+    private String married;
+    private String singleChildCarer;
+    private String soleIncome;
 
-    public Employee(String var) {
-        List<List<String>> emp = CSVReader.read("Employee.csv");
-        for (List<String> line : emp) {
-            if(line.get(0).equals(var)) {
-                this.Id = var;
-                this.name = line.get(1);
-                this.payScale = line.get(2);
-                this.Position = line.get(3);
-                this.Married = Boolean.parseBoolean(YesNo(line.get(4)));
-                this.SingleChildCarer = Boolean.parseBoolean(YesNo(line.get(5)));
-                this.SoleIncome = Boolean.parseBoolean(YesNo(line.get(6)));
-            } else if(line.get(1).equals(var)) {
-                this.Id = line.get(0);
-                this.name = var;
-                this.payScale = line.get(2);
-                this.Position = line.get(3);
-                this.Married = Boolean.parseBoolean(YesNo(line.get(4)));
-                this.SingleChildCarer = Boolean.parseBoolean(YesNo(line.get(5)));
-                this.SoleIncome = Boolean.parseBoolean(YesNo(line.get(6)));
-            }
-        }
+    // Constructor with the new fields
+    public Employee(String name, String id, String scaleID, String description, String married, String singleChildCarer, String soleIncome) {
+        this.name = name;
+        this.id = id;
+        this.scaleID = scaleID;
+        this.description = description;
+        this.married = married;
+        this.singleChildCarer = singleChildCarer;
+        this.soleIncome = soleIncome;
     }
 
+    // Getter methods
     public String getName() {
-        return this.name;
+        return name;
     }
+
     public String getId() {
-        return this.Id;
+        return id;
     }
 
-    public String getPayScale() {
-        return payScale;
+    public String getScaleID() {
+        return scaleID;
     }
 
-    public String getPosition() {
-        return Position;
+    public String getDescription() {
+        return description;
     }
 
+    public String getMarried() {
+        return married;
+    }
+
+    public String getSingleChildCarer() {
+        return singleChildCarer;
+    }
+
+    public String getSoleIncome() {
+        return soleIncome;
+    }
+
+    // Additional methods for convenience
     public boolean isMarried() {
-        return Married;
+        return "yes".equalsIgnoreCase(married); // Assuming "yes" means married
     }
 
     public boolean isSingleChildCarer() {
-        return SingleChildCarer;
+        return "yes".equalsIgnoreCase(singleChildCarer); // Assuming "yes" means single child carer
     }
 
     public boolean isSoleIncome() {
-        return SoleIncome;
-    }
-
-    public String toString() {
-        return name + Id + payScale + Position + Married + SingleChildCarer + SoleIncome;
-    }
-    public String YesNo(String var) {
-        if (var.equals("Yes")) {
-            return "True";
-        } else if(var.equals("No")) {
-            return "False";
-        } else {
-            return "Error";
-        }
+        return "yes".equalsIgnoreCase(soleIncome); // Assuming "yes" means sole income
     }
 }

@@ -20,7 +20,13 @@ public class Payslip {
             File csv = new File("" + emp.getId() + ".csv");
             FileWriter fw = new FileWriter(csv);
             BufferedWriter bw = new BufferedWriter(fw);
-            String line = bw.write("fasdfa", 10, 6);
+            String first = "Gross,Tax,PRSI,USC,FORSA,Total Deduction,Net";
+            if (csv.length() == 0) {
+                bw.write(first);
+            }
+            
+            bw.write("fadfad",0,6);
+            bw.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

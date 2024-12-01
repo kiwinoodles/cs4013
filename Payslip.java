@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class Payslip {
@@ -18,16 +19,17 @@ public class Payslip {
         double forsa = FORSA(gross);
         double totalDeduction = tax + prsi + usc + forsa;
         double net = gross - totalDeduction;
+        LocalDateTime now = LocalDateTime.now();
         try {
             File csv = new File("" + emp.getId() + ".csv");
             FileWriter fw = new FileWriter(csv,true);
             BufferedWriter bw = new BufferedWriter(fw);
-            String first = "Id,Gross,Tax,PRSI,USC,FORSA,Total Deduction,Net";
+            String first = "Id,Gross,Tax,PRSI,USC,FORSA,Total Deduction,Net,DateTime Issued";
             if (csv.length() == 0) {
                 bw.write(first);
                 bw.newLine();
             }
-            String line = "" + emp.getId() + "," + ((double)Math.round(gross * 1000d) / 1000d) + "," + ((double)Math.round(tax * 1000d) / 1000d) + "," + ((double)Math.round(prsi * 1000d) / 1000d) + "," + ((double)Math.round(usc * 1000d) / 1000d) + "," + ((double)Math.round(forsa * 1000d) / 1000d) + "," + ((double)Math.round(totalDeduction * 1000d) / 1000d) + "," + ((double)Math.round(net * 1000d) / 1000d);
+            String line = "" + emp.getId() + "," + ((double)Math.round(gross * 1000d) / 1000d) + "," + ((double)Math.round(tax * 1000d) / 1000d) + "," + ((double)Math.round(prsi * 1000d) / 1000d) + "," + ((double)Math.round(usc * 1000d) / 1000d) + "," + ((double)Math.round(forsa * 1000d) / 1000d) + "," + ((double)Math.round(totalDeduction * 1000d) / 1000d) + "," + ((double)Math.round(net * 1000d) / 1000d) + "," + now;
             bw.write(line,0,line.length());
             bw.newLine();
             bw.close();
@@ -39,7 +41,6 @@ public class Payslip {
     public double gross(Employee emp) {
         for (List<String> Scale : Scales) {
             if (emp.getPayScale().compareTo(Scale.get(0)) == 0) {
-                System.out.println("in");
                 return Integer.parseInt(Scale.get(1));
             }
         }

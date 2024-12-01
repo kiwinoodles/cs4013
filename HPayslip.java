@@ -53,15 +53,15 @@ public class Payslip {
             }
 
             Scale = (List<String>) var2.next();
-        } while (!emp.getScaleID().equals(Scale.get(0))); // Replaced getPayScale() with getScaleID()
+        } while (!emp.getScaleID().equals(Scale.get(0)));
 
-        // Ensure that the value is a valid integer before parsing
+        // ensure that the value is a valid integer before parsing
         String grossValueStr = Scale.get(1).trim();
         try {
             return Integer.parseInt(grossValueStr);
         } catch (NumberFormatException e) {
             System.out.println("Error: Invalid gross value in CSV: " + grossValueStr);
-            return 0.0; // Return 0 if invalid
+            return 0.0; // return 0 if invalid
         }
     }
 

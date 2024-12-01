@@ -1,7 +1,7 @@
-﻿EmployeeIDName,,ScaleID,Description
-51087,Ashley Collier,EP_CM_08,EPS Category Manager
-79322,Juan Brooks,AD_SO_03,Senior Administrative Officer
-18652,Robert Roman,CL_CF_01,Clinical Fellow
+﻿EmployeeID,Name,ScaleID,Description,Married,SingleChildCarer,SoleIncome
+51087,Ashley Collier,EP_CM_08,EPS Category Manager,Yes,No,Yes
+79322,Juan Brooks,AD_SO_03,Senior Administrative Officer,No,Yes,Yes
+18652,Robert Roman,CL_CF_01,Clinical Fellow,Yes,No,Yes
 54234,Latasha Mora,TE_UT_07,University Teacher
 68973,Nicholas Graham,AC_AP_04,Associate Professor
 14563,Christopher Hawkins,AC_AP_11,Associate Professor

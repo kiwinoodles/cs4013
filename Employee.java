@@ -91,15 +91,12 @@ public class Employee {
             }
             count++;
         }
-        System.out.println(row.get(0).compareTo(next.get(0)));
         if (row.get(0).compareTo(next.get(0)) == -1) {
-            System.out.println("in");
             try {
                 FileWriter fw = new FileWriter("Employeetemp.csv");
                 BufferedWriter bw = new BufferedWriter(fw);
                 int i = 0;
                 for (List<String> line : empcsv) {
-                    System.out.println(i);
                     if (line.get(0).compareTo(Id) == 0) {
                         line.set(2, next.get(0));
                         empcsv.set(i, line);
@@ -107,18 +104,52 @@ public class Employee {
                     i++;
                 }
                 for (List<String> line : empcsv) {
-                    System.out.println(line);
-                    bw.write(line.toString());
+                    for (String s : line) {
+                        bw.write(s + ",");
+                    }
                     bw.newLine();
                 }
+                bw.close();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+        } else {
+            System.out.println("in");
+            promote();
         }
     }
 
     public void promote() {
-
+        List<List<String>> empcsv = CSVReader.read("Employeetemp.csv");
+        switch (getPosition()) {
+            case "Administrator":
+                Position = "Senior Administrator";
+                payScale = "AD_SA_01";
+                break;
+            default:
+                System.out.println("No Promotion Available");
+        }
+        try {
+            FileWriter fw = new FileWriter("Employeetemp.csv");
+            BufferedWriter bw = new BufferedWriter(fw);
+            int i = 0;
+            for (List<String> line : empcsv) {
+                if (line.get(0).compareTo(Id) == 0) {
+                    line.set(2, getPayScale());
+                    line.set(3, getPosition());
+                    empcsv.set(i, line);
+                }
+                i++;
+            }
+            for (List<String> line : empcsv) {
+                for (String s : line) {
+                    bw.write(s + ",");
+                }
+                bw.newLine();
+            }
+            bw.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
-
 }

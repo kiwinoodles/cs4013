@@ -2,6 +2,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class Payslip {
@@ -18,14 +20,16 @@ public class Payslip {
         double net = gross - totalDeduction;
         try {
             File csv = new File("" + emp.getId() + ".csv");
-            FileWriter fw = new FileWriter(csv);
+            FileWriter fw = new FileWriter(csv,true);
             BufferedWriter bw = new BufferedWriter(fw);
-            String first = "Gross,Tax,PRSI,USC,FORSA,Total Deduction,Net";
+            String first = "Id,Gross,Tax,PRSI,USC,FORSA,Total Deduction,Net";
             if (csv.length() == 0) {
                 bw.write(first);
+                bw.newLine();
             }
-            
-            bw.write("fadfad",0,6);
+            String line = "" + emp.getId() + "," + ((double)Math.round(gross * 1000d) / 1000d) + "," + ((double)Math.round(tax * 1000d) / 1000d) + "," + ((double)Math.round(prsi * 1000d) / 1000d) + "," + ((double)Math.round(usc * 1000d) / 1000d) + "," + ((double)Math.round(forsa * 1000d) / 1000d) + "," + ((double)Math.round(totalDeduction * 1000d) / 1000d) + "," + ((double)Math.round(net * 1000d) / 1000d);
+            bw.write(line,0,line.length());
+            bw.newLine();
             bw.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -34,8 +38,9 @@ public class Payslip {
 
     public double gross(Employee emp) {
         for (List<String> Scale : Scales) {
-            if (Scale.get(1) == emp.getPayScale()) {
-                return Integer.parseInt(Scale.get(2));
+            if (emp.getPayScale().compareTo(Scale.get(0)) == 0) {
+                System.out.println("in");
+                return Integer.parseInt(Scale.get(1));
             }
         }
         return 0;

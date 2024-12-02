@@ -2,7 +2,7 @@
 
 Commands within the CLI:
 Prompted with either entering Admin, HR, or User
-When User is slected:
+When User is selected:
 - Enter your name or second name into the terminal
 - Enter your password(UserID)
 - When successfully logged in you are able to:

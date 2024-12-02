@@ -12,7 +12,7 @@ public class Employee {
     private boolean SoleIncome = false;
 
     public Employee(String var) {
-        List<List<String>> emp = CSVReader.read("Employeetemp.csv");
+        List<List<String>> emp = CSVReader.read("Employee.csv");
         for (List<String> line : emp) {
             if(line.get(0).equals(var)) {
                 this.Id = var;
@@ -76,7 +76,7 @@ public class Employee {
 
     public void advance() {
         List<List<String>> Scales = CSVReader.read("ScaleID.csv");
-        List<List<String>> empcsv = CSVReader.read("Employeetemp.csv");
+        List<List<String>> empcsv = CSVReader.read("Employee.csv");
         boolean found = false;
         List<String> row = new ArrayList<String>();
         List<String> next = new ArrayList<String>();
@@ -95,7 +95,7 @@ public class Employee {
         if (row.get(0).compareTo(next.get(0)) == -1) {
             System.out.println("in");
             try {
-                FileWriter fw = new FileWriter("Employeetemp.csv");
+                FileWriter fw = new FileWriter("Employee.csv");
                 BufferedWriter bw = new BufferedWriter(fw);
                 int i = 0;
                 for (List<String> line : empcsv) {
@@ -118,7 +118,48 @@ public class Employee {
     }
 
     public void promote() {
-
+        List<List<String>> empcsv = CSVReader.read("Employee.csv");
+        switch (getPosition()) {
+            case "Administrator":
+                Position = "Senior Administrator";
+                payScale = "AD_SA_01";
+                break;
+            case "Professor":
+                Position = "Full Professor";
+                payScale = "AC_FP_01";
+                break;
+            case "Associate Professor A":
+                Position = "Professor";
+                payScale = "AC_PF_01";
+                break;
+            case "Associate Professor B":
+                Position = "Professor";
+                payScale = "AC_PF_01";
+                break;
+            default:
+                System.out.println("No Promotion Available");
+        }
+        try {
+            FileWriter fw = new FileWriter("Employee.csv");
+            BufferedWriter bw = new BufferedWriter(fw);
+            int i = 0;
+            for (List<String> line : empcsv) {
+                if (line.get(0).compareTo(Id) == 0) {
+                    line.set(2, getPayScale());
+                    line.set(3, getPosition());
+                    empcsv.set(i, line);
+                }
+                i++;
+            }
+            for (List<String> line : empcsv) {
+                for (String s : line) {
+                    bw.write(s + ",");
+                }
+                bw.newLine();
+            }
+            bw.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
-
 }

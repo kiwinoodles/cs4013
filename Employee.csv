@@ -1,51 +1,51 @@
-﻿EmployeeID,Name,ScaleID,Description,Married,SingleChildCarer,SoleIncome
-51087,Ashley Collier,EP_CM_08,EPS Category Manager,Yes,No,Yes
-79322,Juan Brooks,AD_SO_03,Senior Administrative Officer,No,Yes,Yes
-18652,Robert Roman,CL_CF_01,Clinical Fellow,Yes,No,Yes
-54234,Latasha Mora,TE_UT_07,University Teacher
-68973,Nicholas Graham,AC_AP_04,Associate Professor
-14563,Christopher Hawkins,AC_AP_11,Associate Professor
-92301,Theodore Roberts,EP_CS_04,EPS Category Specialist
-32874,Johnathan Hall,SS_GS_11,Grounds Supervisor
-27549,Daniel Giles,TC_LA_08,Laboratory Attendant
-88162,Joseph Holmes,TE_UT_04,University Teacher
-65384,Donna Hunt,LB_AL_15,Assistant Librarian
-40728,Peter Kim MD,IT_AP_04,Analyst Programmer
-79036,Lisa Mora,LB_AL_06,Assistant Librarian
-68419,Lindsey Wiggins,SS_SA_11,Senior Aide
-21459,Derrick Allen,SS_SP_05,Sen Porter
-83604,Terry Cook,TE_UT_08,University Teacher
-14590,Christina Williams,TE_TF_02,Teaching Fellow
-37058,Douglas Rivera,TE_UT_02,University Teacher
-56213,Theresa Clay,LB_AL_09,Assistant Librarian
-79210,Gina Marshall,SS_GS_05,Grounds Supervisor
-41276,Michael Clark,SS_GS_09,Grounds Supervisor
-98341,John Garcia,SS_SP_08,Sen Porter
-60839,Mary Myers,LB_SL_12,Senior Library Assistant
-54761,Tiffany Paul,TC_LA_01,Laboratory Attendant
-79284,Christina Perez,LB_SL_01,Senior Library Assistant
-61592,Isabella Dudley,SS_GS_08,Grounds Supervisor
-21364,Brian Kelley,IT_AP_03,Analyst Programmer
-39872,Alec Aguirre,TC_LA_06,Laboratory Attendant
-76124,Gregory Sellers,SS_SA_08,Senior Aide
-50679,Joshua Wright,LB_AL_04,Assistant Librarian
-93204,Reginald Wilson,IT_PO_03,Print Operator
-48716,Alexandra Medina,TE_TF_04,Teaching Fellow
-62983,Manuel Macias,LB_LA_01,Library Assistant
-74820,Sarah Johnson,LB_AL_02,Assistant Librarian
-90456,Chase Gallegos,SS_GS_04,Grounds Supervisor
-17259,William Doyle,IT_CO_07,Computer Operator
-35172,Melissa Rowe,LB_LA_06,Library Assistant
-89017,Ronald Tucker,TE_TF_03,Teaching Fellow
-24683,Shannon Clayton,LB_SL_10,Senior Library Assistant
-52094,Meghan Arellano,SS_GS_06,Grounds Supervisor
-73856,Emily Carlson,SS_SP_03,Sen Porter
-49572,Alexander Murphy,TC_LA_05,Laboratory Attendant
-66201,Jessica Hudson DDS,LB_LA_09,Library Assistant
-13458,Monica Wood,IT_PO_02,Print Operator
-70639,Wesley Parker,SS_SA_09,Senior Aide
-38152,Sophia Miller,IT_CO_06,Computer Operator
-52468,Sara Brown,IT_CO_03,Computer Operator
-82971,Mary Allen,LB_AL_08,Assistant Librarian
-95384,Jeffrey Sparks,LB_SL_02,Senior Library Assistant
-60257,Mary Ramirez,IT_PO_05,Print Operator
+﻿EmployeeID,Name,ScaleID,Description,Married,SingleChildCarer,SoleIncome,
+51087,Ashley Collier,EP_CM_08,EPS Category Manager,Yes,No,Yes,
+79322,Juan Brooks,AD_SO_03,Senior Administrative Officer,No,Yes,Yes,
+18652,Robert Roman,CL_CF_01,Clinical Fellow,Yes,No,Yes,
+54234,Latasha Mora,TE_UT_07,University Teacher,Yes,No,Yes,
+68973,Nicholas Graham,AC_PA_04,Associate Professor A,Yes,No,Yes,
+14563,Christopher Hawkins,AC_PB_06,Associate Professor B,Yes,No,Yes,
+92301,Theodore Roberts,EP_CS_04,EPS Category Specialist,Yes,No,Yes,
+32874,Johnathan Hall,SS_GS_11,Grounds Supervisor,Yes,No,Yes,
+27549,Daniel Giles,TC_LA_08,Laboratory Attendant,Yes,No,Yes,
+88162,Joseph Holmes,TE_UT_04,University Teacher,Yes,No,Yes,
+65384,Donna Hunt,LB_AL_15,Assistant Librarian,Yes,No,Yes,
+40728,Peter Kim MD,TC_LA_01,Laboratory Attendant,Yes,No,Yes,
+79036,Lisa Mora,LB_AL_06,Assistant Librarian,Yes,No,Yes,
+68419,Lindsey Wiggins,SS_SA_11,Senior Aide,Yes,No,Yes,
+21459,Derrick Allen,SS_SP_05,Sen Porter,Yes,No,Yes,
+83604,Terry Cook,TE_UT_08,University Teacher,Yes,No,Yes,
+14590,Christina Williams,TE_TF_02,Teaching Fellow,Yes,No,Yes,
+37058,Douglas Rivera,TE_UT_02,University Teacher,Yes,No,Yes,
+56213,Theresa Clay,LB_AL_09,Assistant Librarian,Yes,No,Yes,
+79210,Gina Marshall,SS_GS_05,Grounds Supervisor,Yes,No,Yes,
+41276,Michael Clark,SS_GS_09,Grounds Supervisor,Yes,No,Yes,
+98341,John Garcia,SS_SP_08,Sen Porter,Yes,No,Yes,
+60839,Mary Myers,LB_SL_12,Senior Library Assistant,Yes,No,Yes,
+54761,Tiffany Paul,TC_LA_01,Laboratory Attendant,Yes,No,Yes,
+79284,Christina Perez,LB_SL_01,Senior Library Assistant,Yes,No,Yes,
+61592,Isabella Dudley,SS_GS_08,Grounds Supervisor,Yes,No,Yes,
+21364,Brian Kelley,LB_SL_12,Senior Library Assistant,Yes,No,Yes,
+39872,Alec Aguirre,TC_LA_06,Laboratory Attendant,Yes,No,Yes,
+76124,Gregory Sellers,SS_SA_08,Senior Aide,Yes,No,Yes,
+50679,Joshua Wright,LB_AL_04,Assistant Librarian,Yes,No,Yes,
+93204,Reginald Wilson,IT_PO_03,Print Operator,Yes,No,Yes,
+48716,Alexandra Medina,TE_TF_04,Teaching Fellow,Yes,No,Yes,
+62983,Manuel Macias,LB_LA_01,Library Assistant,Yes,No,Yes,
+74820,Sarah Johnson,LB_AL_02,Assistant Librarian,Yes,No,Yes,
+90456,Chase Gallegos,SS_GS_04,Grounds Supervisor,Yes,No,Yes,
+17259,William Doyle,IT_CO_07,Computer Operator,Yes,No,Yes,
+35172,Melissa Rowe,LB_LA_06,Library Assistant,Yes,No,Yes,
+89017,Ronald Tucker,TE_TF_03,Teaching Fellow,Yes,No,Yes,
+24683,Shannon Clayton,LB_SL_10,Senior Library Assistant,Yes,No,Yes,
+52094,Meghan Arellano,SS_GS_06,Grounds Supervisor,Yes,No,Yes,
+73856,Emily Carlson,SS_SP_03,Sen Porter,Yes,No,Yes,
+49572,Alexander Murphy,TC_LA_05,Laboratory Attendant,Yes,No,Yes,
+66201,Jessica Hudson DDS,LB_LA_09,Library Assistant,Yes,No,Yes,
+13458,Monica Wood,IT_PO_02,Print Operator,Yes,No,Yes,
+70639,Wesley Parker,SS_SA_09,Senior Aide,Yes,No,Yes,
+38152,Sophia Miller,IT_CO_06,Computer Operator,Yes,No,Yes,
+52468,Sara Brown,IT_CO_03,Computer Operator,Yes,No,Yes,
+82971,Mary Allen,LB_AL_08,Assistant Librarian,Yes,No,Yes,
+95384,Jeffrey Sparks,LB_SL_02,Senior Library Assistant,Yes,No,Yes,
+60257,Mary Ramirez,IT_PO_05,Print Operator,Yes,No,Yes,

@@ -1,5 +1,6 @@
-package org.example;
-
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -60,7 +61,8 @@ public class HRHandler {
             System.out.println("1. View Scale ID");
             System.out.println("2. View Description");
             System.out.println("3. View Payslip");
-            System.out.println("4. Exit");
+            System.out.println("4. Promote");
+            System.out.println("5. Exit");
 
             String choice = scanner.nextLine().trim();
             switch (choice) {
@@ -72,10 +74,12 @@ public class HRHandler {
                     break;
                 case "3":
                     // generate and display the payslip
-                    Employee employee = new Employee(details[1], idToView, details[2], details[3], details[4], details[5], details[6]);
-                    displayPayslip(employee);
+                    Employee employee = new Employee(idToView);
+                    displayPayslipHistory(employee);
                     break;
                 case "4":
+                    promoteEmployee(idToView,dataMap);
+                case "5":
                     System.out.println("Exiting employee details view.");
                     return; // exit the employee details view section
                 default:
@@ -84,25 +88,28 @@ public class HRHandler {
         }
     }
 
-    private static void displayPayslip(Employee emp) {
-        Payslip payslip = new Payslip();
-        double gross = payslip.gross(emp);
-        double tax = payslip.IncomeTax(emp);
-        double prsi = payslip.PRSI(gross);
-        double usc = payslip.USC(gross);
-        double forsa = payslip.FORSA(gross);
-        double totalDeduction = tax + prsi + usc + forsa;
-        double net = gross - totalDeduction;
+    private static void displayPayslipHistory(Employee emp) {
+        File open = new File(emp.getId() + ".csv");
+        List<List<String>> empcsv = CSVReader.read(emp.getId() + ".csv");
+        for (List<String> row : empcsv) {
+            System.out.println("Id:" + row.get(0) + "\nGross" + row.get(1) + "\nTax" + row.get(2) + "\nPRSI" + row.get(3) + "\nUSC" + row.get(4) + "\nFORSA" + row.get(5) + "\nTotal Deduction" + row.get(6) + "\nNet" + row.get(7) + "\nDate Issued");
+        }
+    }
+    public static void promoteEmployee(String idToPromote, Map<String, String[]> dataMap) {
 
-        System.out.println("-----------------------------------");
-        System.out.println("Payslip for Employee: " + emp.getName());
-        System.out.println("Gross Pay: €" + String.format("%.2f", gross));
-        System.out.println("Income Tax: €" + String.format("%.2f", tax));
-        System.out.println("PRSI: €" + String.format("%.2f", prsi));
-        System.out.println("USC: €" + String.format("%.2f", usc));
-        System.out.println("FORSA: €" + String.format("%.2f", forsa));
-        System.out.println("Total Deductions: €" + String.format("%.2f", totalDeduction));
-        System.out.println("Net Pay: €" + String.format("%.2f", net));
-        System.out.println("-----------------------------------");
+        while (true) {
+            System.out.println("Enter UserID you would like to promote: ");
+
+            if ("exit".equalsIgnoreCase(idToPromote)) {
+                System.out.println("Exiting HR session.");
+                break; // exit HR session if user types "exit"
+            }
+            if (dataMap.containsKey(idToPromote)) {
+                Employee Testing = new Employee(idToPromote);
+                Testing.promote();
+                System.out.println("Sucessfully updated " + Testing);
+                break;
+            }
+        }
     }
 }

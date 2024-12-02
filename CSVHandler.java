@@ -1,5 +1,3 @@
-package org.example;
-
 import java.io.*;
 import java.util.*;
 
@@ -18,7 +16,7 @@ public class CSVHandler {
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
                 // skip rows with missing data or improper formatting
-                if (data.length < 4) {
+                if (data.length < 6) {
                     continue;
                 }
                 dataMap.put(data[0], data); // employee ID as key

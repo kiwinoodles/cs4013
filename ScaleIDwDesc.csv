@@ -16,8 +16,6 @@ AC_AP_06,104948,Associate Professor
 AC_AP_07,108430,Associate Professor
 AC_AP_08,111916,Associate Professor
 AC_AP_09,115395,Associate Professor
-AC_AP_10,37010,Associate Professor
-AC_AP_11,40061,Associate Professor
 AD_SO_01,106800,Senior Administrative Officer
 AD_SO_02,113990,Senior Administrative Officer
 AD_SO_03,121181,Senior Administrative Officer
@@ -116,15 +114,6 @@ LB_AL_12,62371,Assistant Librarian
 LB_AL_13,64409,Assistant Librarian
 LB_AL_14,66805,Assistant Librarian
 LB_AL_15,69293,Assistant Librarian
-IT_AP_01,67132,Analyst Programmer
-IT_AP_02,79088,Analyst Programmer
-IT_AP_03,82103,Analyst Programmer
-IT_AP_04,86389,Analyst Programmer
-IT_AP_05,90697,Analyst Programmer
-IT_AP_06,95004,Analyst Programmer
-IT_AP_07,99296,Analyst Programmer
-IT_AP_08,103583,Analyst Programmer
-IT_AP_09,107875,Analyst Programmer
 IT_CO_01,33403,Computer Operator
 IT_CO_02,35114,Computer Operator
 IT_CO_03,36604,Computer Operator

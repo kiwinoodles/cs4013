@@ -1,5 +1,3 @@
-package org.example;
-
 import java.util.Map;
 import java.util.Scanner;
 
@@ -56,7 +54,7 @@ public class UserHandler {
         if (employeeData.containsKey(userId)) {
             String[] details = employeeData.get(userId);
             // create and return the Employee object basd on the details in the CSV
-            return new Employee(details[1], details[0], details[2], details[3], details[4], details[5], details[6]);
+            return new Employee(userId);
         }
         return null; // return null if no employee with the given ID is found
     }

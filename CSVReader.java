@@ -10,7 +10,10 @@ public class CSVReader {
         try {
             FileReader fr = new FileReader(fileName);
             BufferedReader br = new BufferedReader(fr);
-
+            if (br.readLine()==null) {
+                System.out.println("File is empty");
+                return list;
+            }
             String line = br.readLine();
             while (line != null) {
                 List<String> lineData = Arrays.asList(line.split(","));

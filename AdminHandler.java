@@ -1,5 +1,3 @@
-package org.example;
-
 import java.util.*;
 import java.io.*;
 
@@ -38,7 +36,7 @@ public class AdminHandler {
         }
     }
 
-    // haandle admin options like adding or deleting employees
+    // handle admin options like adding or deleting employees
     private static void handleAdminOptions(Scanner scanner, Map<String, String[]> employeeData, CSVHandler employeeHandler) {
         while (true) {
             System.out.println("Choose an option: ");
@@ -68,10 +66,10 @@ public class AdminHandler {
         System.out.println("Enter Employee Name: ");
         String name = scanner.nextLine().trim();
 
-        System.out.println("Enter Job Description (e.g., Senior Admin): ");
+        System.out.println("Enter Job Description (e.g., Senior Administrator): ");
         String description = scanner.nextLine().trim();
 
-        // find corresponding ScaleID prefxi from ScaleIDwDesc file
+        // find corresponding ScaleID prefix from ScaleIDwDesc file
         String scalePrefix = getScaleIDPrefixFromDescription(description);
 
         if (scalePrefix != null) {

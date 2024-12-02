@@ -1,0 +1,228 @@
+﻿ScaleID,Salary,Description
+PR_PR_01,240716,President
+PR_VP_01,184171,Vice President
+AC_FP_01,140068,Full Professor
+AC_FP_02,148055,Full Professor
+AC_FP_03,156042,Full Professor
+AC_FP_04,164028,Full Professor
+AC_FP_05,172016,Full Professor
+AC_FP_06,177078,Full Professor
+AC_AP_01,87548,Associate Professor
+AC_AP_02,91018,Associate Professor
+AC_AP_03,94492,Associate Professor
+AC_AP_04,97988,Associate Professor
+AC_AP_05,101461,Associate Professor
+AC_AP_06,104948,Associate Professor
+AC_AP_07,108430,Associate Professor
+AC_AP_08,111916,Associate Professor
+AC_AP_09,115395,Associate Professor
+AD_SO_01,106800,Senior Administrative Officer
+AD_SO_02,113990,Senior Administrative Officer
+AD_SO_03,121181,Senior Administrative Officer
+AD_SO_04,128369,Senior Administrative Officer
+AD_SO_05,135565,Senior Administrative Officer
+AD_SO_06,142758,Senior Administrative Officer
+AD_SA_01,39893,Senior Administrator
+AD_SA_02,40785,Senior Administrator
+AD_SA_03,42037,Senior Administrator
+AD_SA_04,43282,Senior Administrator
+AD_SA_05,44546,Senior Administrator
+AD_SA_06,45799,Senior Administrator
+AD_SA_07,47069,Senior Administrator
+AD_SA_08,48336,Senior Administrator
+AD_SA_09,49613,Senior Administrator
+AD_SA_10,50660,Senior Administrator
+AD_SA_11,51944,Senior Administrator
+AD_SA_12,53265,Senior Administrator
+AD_AD_01,26572,Administrator
+AD_AD_02,27495,Administrator
+AD_AD_03,28629,Administrator
+AD_AD_04,29397,Administrator
+AD_AD_05,30060,Administrator
+AD_AD_06,30830,Administrator
+AD_AD_07,31616,Administrator
+AD_AD_08,32491,Administrator
+AD_AD_09,33224,Administrator
+AD_AD_10,34378,Administrator
+AD_AD_11,35541,Administrator
+AD_AD_12,36715,Administrator
+AD_AD_13,37403,Administrator
+AD_AD_14,38396,Administrator
+AD_AD_15,39212,Administrator
+AD_AD_16,39926,Administrator
+AD_AD_17,40912,Administrator
+AD_AD_18,41892,Administrator
+EP_PM_01,86389,EPS Portfolio Manager
+EP_PM_02,90698,EPS Portfolio Manager
+EP_PM_03,95005,EPS Portfolio Manager
+EP_PM_04,99296,EPS Portfolio Manager
+EP_PM_05,103583,EPS Portfolio Manager
+EP_PM_06,107874,EPS Portfolio Manager
+EP_CS_01,44752,EPS Category Specialist
+EP_CS_02,47047,EPS Category Specialist
+EP_CS_03,49360,EPS Category Specialist
+EP_CS_04,51269,EPS Category Specialist
+EP_CS_05,53219,EPS Category Specialist
+EP_CS_06,55306,EPS Category Specialist
+EP_CS_07,57462,EPS Category Specialist
+EP_CS_08,59558,EPS Category Specialist
+EP_CM_01,67131,EPS Category Manager
+EP_CM_02,69712,EPS Category Manager
+EP_CM_03,72480,EPS Category Manager
+EP_CM_04,75725,EPS Category Manager
+EP_CM_05,79087,EPS Category Manager
+EP_CM_06,82103,EPS Category Manager
+EP_CM_07,86389,EPS Category Manager
+EP_CM_08,90698,EPS Category Manager
+LB_SL_01,64830,Sub Librarian
+LB_SL_02,68413,Sub Librarian
+LB_SL_03,71505,Sub Librarian
+LB_SL_04,74734,Sub Librarian
+LB_SL_05,77824,Sub Librarian
+LB_SL_06,80106,Sub Librarian
+LB_SL_07,83065,Sub Librarian
+LB_SL_08,86613,Sub Librarian
+LB_SL_09,90308,Sub Librarian
+LB_SL_10,93715,Sub Librarian
+LB_SL_11,97127,Sub Librarian
+LB_SL_12,100531,Sub Librarian
+LB_SL_13,102234,Sub Librarian
+LB_SL_14,104052,Sub Librarian
+LB_SL_15,106850,Sub Librarian
+LB_LA_01,33703,Library Assistant
+LB_LA_02,35429,Library Assistant
+LB_LA_03,36934,Library Assistant
+LB_LA_04,37881,Library Assistant
+LB_LA_05,39133,Library Assistant
+LB_LA_06,40055,Library Assistant
+LB_LA_07,41318,Library Assistant
+LB_LA_08,43868,Library Assistant
+LB_LA_09,45138,Library Assistant
+LB_LA_10,45798,Library Assistant
+LB_AL_01,44751,Assistant Librarian
+LB_AL_02,47050,Assistant Librarian
+LB_AL_03,49364,Assistant Librarian
+LB_AL_04,51269,Assistant Librarian
+LB_AL_05,53605,Assistant Librarian
+LB_AL_06,55126,Assistant Librarian
+LB_AL_07,56632,Assistant Librarian
+LB_AL_08,57745,Assistant Librarian
+LB_AL_09,59104,Assistant Librarian
+LB_AL_10,60468,Assistant Librarian
+LB_AL_11,61415,Assistant Librarian
+LB_AL_12,62371,Assistant Librarian
+LB_AL_13,64409,Assistant Librarian
+LB_AL_14,66805,Assistant Librarian
+LB_AL_15,69293,Assistant Librarian
+IT_CO_01,33403,Computer Operator
+IT_CO_02,35114,Computer Operator
+IT_CO_03,36604,Computer Operator
+IT_CO_04,37881,Computer Operator
+IT_CO_05,39133,Computer Operator
+IT_CO_06,40054,Computer Operator
+IT_CO_07,41318,Computer Operator
+IT_CO_08,42586,Computer Operator
+IT_CO_09,43868,Computer Operator
+IT_CO_10,45138,Computer Operator
+IT_PO_01,31238,Print Operator
+IT_PO_02,32320,Print Operator
+IT_PO_03,33844,Print Operator
+IT_PO_04,35403,Print Operator
+IT_PO_05,36946,Print Operator
+IT_PO_06,38331,Print Operator
+IT_PO_07,39365,Print Operator
+IT_PO_08,40749,Print Operator
+IT_PO_09,42093,Print Operator
+IT_PO_10,43223,Print Operator
+IT_PO_11,44373,Print Operator
+TC_TO_01,39828,Technical Officer
+TC_TO_02,41606,Technical Officer
+TC_TO_03,43747,Technical Officer
+TC_TO_04,45033,Technical Officer
+TC_TO_05,46408,Technical Officer
+TC_TO_06,49325,Technical Officer
+TC_TO_07,51251,Technical Officer
+TC_TO_08,53228,Technical Officer
+TC_TO_09,55376,Technical Officer
+TC_TO_10,57459,Technical Officer
+TC_LA_01,33403,Laboratory Attendant
+TC_LA_02,34543,Laboratory Attendant
+TC_LA_03,36604,Laboratory Attendant
+TC_LA_04,36966,Laboratory Attendant
+TC_LA_05,36989,Laboratory Attendant
+TC_LA_06,37352,Laboratory Attendant
+TC_LA_07,37714,Laboratory Attendant
+TC_LA_08,38072,Laboratory Attendant
+TC_LA_09,38429,Laboratory Attendant
+SS_SP_01,41472,Sen Porter
+SS_SP_02,41678,Sen Porter
+SS_SP_03,41873,Sen Porter
+SS_SP_04,41984,Sen Porter
+SS_SP_05,42103,Sen Porter
+SS_SP_06,42213,Sen Porter
+SS_SP_07,42325,Sen Porter
+SS_SP_08,42445,Sen Porter
+SS_SP_09,42567,Sen Porter
+SS_SP_10,42689,Sen Porter
+SS_SP_11,42811,Sen Porter
+SS_SP_12,42933,Sen Porter
+SS_SP_13,43054,Sen Porter
+SS_GS_01,40712,Grounds Supervisor
+SS_GS_02,40895,Grounds Supervisor
+SS_GS_03,41086,Grounds Supervisor
+SS_GS_04,41188,Grounds Supervisor
+SS_GS_05,41295,Grounds Supervisor
+SS_GS_06,41402,Grounds Supervisor
+SS_GS_07,41498,Grounds Supervisor
+SS_GS_08,41609,Grounds Supervisor
+SS_GS_09,41720,Grounds Supervisor
+SS_GS_10,41828,Grounds Supervisor
+SS_GS_11,41944,Grounds Supervisor
+SS_GS_12,42060,Grounds Supervisor
+SS_GS_13,42165,Grounds Supervisor
+SS_SA_01,40827,Senior Aide
+SS_SA_02,41026,Senior Aide
+SS_SA_03,41209,Senior Aide
+SS_SA_04,41317,Senior Aide
+SS_SA_05,41420,Senior Aide
+SS_SA_06,41534,Senior Aide
+SS_SA_07,41635,Senior Aide
+SS_SA_08,41745,Senior Aide
+SS_SA_09,41859,Senior Aide
+SS_SA_10,41975,Senior Aide
+SS_SA_11,42089,Senior Aide
+SS_SA_12,42206,Senior Aide
+SS_SA_13,42318,Senior Aide
+TC_TF_01,62069,Teaching Fellow
+TC_TF_02,73092,Teaching Fellow
+TC_TF_03,77007,Teaching Fellow
+TC_TF_04,79703,Teaching Fellow
+TC_TF_05,83634,Teaching Fellow
+TC_TF_06,87605,Teaching Fellow
+TC_TF_07,91562,Teaching Fellow
+TC_TF_08,95514,Teaching Fellow
+TC_TF_09,99471,Teaching Fellow
+TC_UT_01,46955,University Teacher
+TC_UT_02,49543,University Teacher
+TC_UT_03,51676,University Teacher
+TC_UT_04,53644,University Teacher
+TC_UT_05,55689,University Teacher
+TC_UT_06,57323,University Teacher
+TC_UT_07,58990,University Teacher
+TC_UT_08,60654,University Teacher
+TC_UT_09,62314,University Teacher
+TC_UT_10,63965,University Teacher
+CL_CT_01,66452,Clinical Tutor
+CL_CT_02,69009,Clinical Tutor
+CL_CT_03,71509,Clinical Tutor
+CL_CT_04,73344,Clinical Tutor
+CL_CT_05,75794,Clinical Tutor
+CL_CT_06,78252,Clinical Tutor
+CL_CF_01,74499,Clinical Fellow
+CL_CF_02,76258,Clinical Fellow
+CL_CF_03,78804,Clinical Fellow
+CL_CF_04,81095,Clinical Fellow
+CL_CF_05,84824,Clinical Fellow
+CL_CF_06,88562,Clinical Fellow
+CL_CF_07,92294,Clinical Fellow
+

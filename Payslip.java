@@ -2,14 +2,11 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 public class Payslip {
     List<List<String>> Scales = CSVReader.read("ScaleID.csv");
-    List<List<String>> empcsv = CSVReader.read("Employee.csv");
 
     public void makePayslip(Employee emp) {
         double gross = gross(emp);
@@ -19,17 +16,17 @@ public class Payslip {
         double forsa = FORSA(gross);
         double totalDeduction = tax + prsi + usc + forsa;
         double net = gross - totalDeduction;
-        LocalDateTime now = LocalDateTime.now();
+        LocalDate now = LocalDate.now();
         try {
             File csv = new File("" + emp.getId() + ".csv");
             FileWriter fw = new FileWriter(csv,true);
             BufferedWriter bw = new BufferedWriter(fw);
-            String first = "Id,Gross,Tax,PRSI,USC,FORSA,Total Deduction,Net,DateTime Issued";
+            String first = "Id,Gross,Tax,PRSI,USC,FORSA,Total Deduction,Net,Date Issued";
             if (csv.length() == 0) {
                 bw.write(first);
                 bw.newLine();
             }
-            String line = "" + emp.getId() + "," + ((double)Math.round(gross * 1000d) / 1000d) + "," + ((double)Math.round(tax * 1000d) / 1000d) + "," + ((double)Math.round(prsi * 1000d) / 1000d) + "," + ((double)Math.round(usc * 1000d) / 1000d) + "," + ((double)Math.round(forsa * 1000d) / 1000d) + "," + ((double)Math.round(totalDeduction * 1000d) / 1000d) + "," + ((double)Math.round(net * 1000d) / 1000d) + "," + now;
+            String line = emp.getId() + "," + ((double)Math.round(gross * 1000d) / 1000d) + "," + ((double)Math.round(tax * 1000d) / 1000d) + "," + ((double)Math.round(prsi * 1000d) / 1000d) + "," + ((double)Math.round(usc * 1000d) / 1000d) + "," + ((double)Math.round(forsa * 1000d) / 1000d) + "," + ((double)Math.round(totalDeduction * 1000d) / 1000d) + "," + ((double)Math.round(net * 1000d) / 1000d) + "," + now;
             bw.write(line,0,line.length());
             bw.newLine();
             bw.close();
